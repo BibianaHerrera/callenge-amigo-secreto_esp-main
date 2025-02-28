@@ -3,12 +3,24 @@ let amigos=[];
 
 function agregarAmigo(){
     let nombre= document.getElementById('amigo').value;
-    if (typeof nombre ==String && nombre !== ""){
+    if (typeof nombre === 'string' && nombre !== ""){
         amigos.push(nombre);
-        let valor =getElementById('amigo').value='';
-        return;
+        document.getElementById('amigo').value='';
+        mostrarAmigos();
     }else{
         alert('Por favor, inserte un nombre')
+        return;
     }
+    
 }
 
+function mostrarAmigos(){
+    let lista=document.getElementById('listaAmigos');
+    lista.innerHTML="";
+
+    for(let i=0;i<amigos.length;i++){
+        let item=document.createElement("li");
+        item.textContent=amigos[i];
+        lista.appendChild(item);
+    }
+}
