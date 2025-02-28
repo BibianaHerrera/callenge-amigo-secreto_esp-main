@@ -24,3 +24,18 @@ function mostrarAmigos(){
         lista.appendChild(item);
     }
 }
+
+function sortearAmigo(){
+    if (amigos.length !== 0){
+        let indice=Math.floor(Math.random()*amigos.length);
+        let amigoSorteado=amigos[indice];
+        let resultado =document.getElementById('resultado');
+        resultado.innerHTML='El amigo sorteado es '+amigoSorteado;
+        let limpiarLista=document.getElementById('listaAmigos');
+        limpiarLista.innerHTML='';
+        
+    }else{
+        alert('No hay amigos para sortear');
+        return;
+    }
+}
